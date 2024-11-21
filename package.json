@@ -1,0 +1,15 @@
+{
+  "name": "birthdaymasterwebserver",
+  "version": "1.0.0",
+  "description": "WebServer for Birthday Catalog",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adolfo Franco",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}

@@ -1,11 +1,11 @@
 import express from 'express';
-import testRoutes from './routes/test.routes.js';
-import e from 'express';
+import peopleRoutes from './routes/people.routes.js';
 
 const app = express();
 
-app.use(testRoutes);
 app.use(express.json());
-app.listen(9000);
 
-console.log("Server running on port: ", 9000);
+app.use(peopleRoutes);
+app.listen("9000", () => {
+    console.log("Server running on port: ", 9000);
+});

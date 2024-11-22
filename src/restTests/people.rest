@@ -1,0 +1,36 @@
+###
+
+GET http://localhost:9000/people
+Content-Type: "application/json";
+
+###
+GET http://localhost:9000/people/6
+Content-Type: "application/json";
+
+###
+GET http://localhost:9000/person/identificador
+Content-Type: "application/json";
+
+###
+POST http://localhost:9000/person/
+Content-Type: application/json
+
+{
+  "primernombre": "andres",
+  "primerapellido": "de la cerda",
+  "fechadenacimiento": "17/06/1977"
+}
+
+###
+PUT http://localhost:9000/person/a1267788
+Content-Type: application/json
+
+{
+  "primernombre": "Adolfo23",
+  "primerapellido": "Franco15",
+  "fechadenacimiento": "17/06/1979"
+}
+
+###
+DELETE http://localhost:9000/person/100
+Content-Type: "application/json";

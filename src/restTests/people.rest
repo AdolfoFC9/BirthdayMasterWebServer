@@ -4,11 +4,11 @@ GET http://localhost:9000/people
 Content-Type: "application/json";
 
 ###
-GET http://localhost:9000/people/6
+GET http://localhost:9000/people/
 Content-Type: "application/json";
 
 ###
-GET http://localhost:9000/person/identificador
+GET http://localhost:9000/person/g
 Content-Type: "application/json";
 
 ###
@@ -16,21 +16,21 @@ POST http://localhost:9000/person/
 Content-Type: application/json
 
 {
-  "primernombre": "andres",
-  "primerapellido": "de la cerda",
-  "fechadenacimiento": "17/06/1977"
+  "primernombre": "Alberto",
+  "primerapellido": "Luna",
+  "fechadenacimiento": "2024-10-12" 
 }
 
 ###
-PUT http://localhost:9000/person/a1267788
+PUT http://localhost:9000/person/6be380f6-1451-482f-81e6-d43b945e631f
 Content-Type: application/json
 
 {
-  "primernombre": "Adolfo23",
-  "primerapellido": "Franco15",
-  "fechadenacimiento": "17/06/1979"
+  "primernombre": "modificaicon3",
+  "primerapellido": "2",
+  "fechadenacimiento": "2024-03-21"
 }
 
 ###
-DELETE http://localhost:9000/person/100
+DELETE http://localhost:9000/person/
 Content-Type: "application/json";

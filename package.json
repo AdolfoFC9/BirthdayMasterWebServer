@@ -5,13 +5,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "webserver": "node --watch src/index.js",
+    "webserver": "node --env-file .env --watch src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Adolfo Franco",
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.1",
+    "moment": "^2.30.1",
+    "pg": "^8.13.1",
     "uuid": "^11.0.3"
   }
 }

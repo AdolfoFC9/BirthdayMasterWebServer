@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "webserver": "node --watch src/index.js",
+    "webserver": "node --env-file .env --watch src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Adolfo Franco",

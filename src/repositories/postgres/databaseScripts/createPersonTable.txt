@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS public.person
+(
+    identificador character varying(36) COLLATE pg_catalog."default" NOT NULL,
+    primernombre character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    primerapellido character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    fechadenacimiento date NOT NULL,
+    CONSTRAINT pk_identificador PRIMARY KEY (identificador)
+);

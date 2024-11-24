@@ -59,7 +59,7 @@ export const savePerson = async (req, res) => {
         const person = await repoInsertPerson(data);
         if (!person)
             return res.sendStatus(500);
-        return res.status(200).json({ person });
+        return res.status(200).json({ identificador: person.identificador, primernombre: person.primernombre,primerapellido: person.primerapellido, fechadenacimiento: person.fechadenacimiento });
     } else {
         return res.status(400).json({ message: "La fecha ingresada es invalida.  El formato aceptado es YYYY-MM-DD" });
     }
@@ -86,7 +86,7 @@ export const updatePerson = async (req, res) => {
         const person = await repoUpdatePerson(id, data);
         if (!person)
             return res.sendStatus(500);
-        return res.status(200).json({ person });
+        return res.status(200).json({ identificador: person.identificador, primernombre: person.primernombre,primerapellido: person.primerapellido, fechadenacimiento: person.fechadenacimiento });
     } else {
         return res.status(400).json({ message: "La fecha ingresada es invalida.  El formato aceptado es YYYY-MM-DD" });
     }

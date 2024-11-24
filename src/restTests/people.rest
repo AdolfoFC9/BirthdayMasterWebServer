@@ -4,7 +4,7 @@ GET http://localhost:9000/people
 Content-Type: "application/json";
 
 ###
-GET http://localhost:9000/people/
+GET http://localhost:9000/people/12
 Content-Type: "application/json";
 
 ###

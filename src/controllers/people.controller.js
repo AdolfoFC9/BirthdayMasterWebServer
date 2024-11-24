@@ -42,10 +42,10 @@ export const getPersonById = async (req, res) => {
 export const savePerson = async (req, res) => {
     
     const data = req.body;
-    console.log(data);
 
-    if (!data.fechadenacimiento || !data.primernombre || !data.primerapellido) return res.status(400).json({ message: "El Primer Nombre, el Primer Apellido y lafecha de nacimiento son requeridos." });
-
+    if (!data.fechadenacimiento || !data.primernombre || !data.primerapellido) {
+        return res.status(400).json({ message: "El Primer Nombre, el Primer Apellido y lafecha de nacimiento son requeridos." });
+    }
     if (data.primernombre.length > 50 || data.primerapellido.length > 50) {
         return res.status(400).json({ message: "El nombre o el apellido exceden el tamano maximo (50)" });
     }
@@ -54,7 +54,7 @@ export const savePerson = async (req, res) => {
     }
     
     const fecha = moment(data?.fechadenacimiento);
-    
+   
     if (fecha.toString() != "Invalid date") {
         const person = await repoInsertPerson(data);
         if (!person)
@@ -80,8 +80,8 @@ export const updatePerson = async (req, res) => {
     }
     
     const fecha = moment(data?.fechadenacimiento);
-    console.log(fecha);
-    console.log(data.fechadenacimiento);
+    //console.log(fecha);
+    //console.log(data.fechadenacimiento);
     if (fecha.toString() != "Invalid date") {
         const person = await repoUpdatePerson(id, data);
         if (!person)

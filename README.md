@@ -1,6 +1,105 @@
-# BirthdayMasterWebServer
+# Birthday Master - Backend
 
-## .env File configuration
+## Description
+
+The **Birthday Master Web Server** is the backend service responsible for handling API requests, processing data, and managing interactions with the **PostgreSQL** database. Built with **Node.js** and **Express.js**, this server provides RESTful endpoints for managing information about people and their birthdays. The server is designed with scalability and maintainability in mind, making use of modern tools and best practices.
+
+---
+
+## Architecture Overview
+
+The backend follows a layered architecture:
+1. **Routes:** Define API endpoints and direct requests to the appropriate controllers.
+2. **Controllers:** Handle the business logic for incoming requests and coordinate interactions between routes and repositories.
+3. **Repositories:** Interact directly with the PostgreSQL database using parameterized queries to ensure security.
+4. **Database:** Stores structured data for persons and supports CRUD operations.
+
+---
+
+## Technical Details
+
+### Tools and Technologies
+
+#### Languages and Frameworks
+- **Node.js:** Provides the runtime environment for running JavaScript on the server.
+- **Express.js:** Simplifies the creation of APIs with robust routing and middleware support.
+
+#### Database
+- **PostgreSQL:** A reliable and scalable relational database used to store person records and their associated details.
+
+#### Libraries and Middlewares
+- **pg:** Enables secure and efficient interaction with PostgreSQL, including executing SQL queries.
+- **Cors:** Manages Cross-Origin Resource Sharing, allowing the frontend to communicate with the backend.
+- **Morgan:** Logs incoming HTTP requests for debugging and monitoring.
+- **Moment.js:** Simplifies date manipulation and formatting.
+
+---
+
+## API Endpoints
+
+### People Endpoints
+1. **GET /people**:  
+   - Retrieves all persons from the database.
+   - **Response:**  
+     ```json
+     [
+       {
+         "id": "12345",
+         "firstname": "John",
+         "lastname": "Doe",
+         "birthday": "1990-06-15"
+       }
+     ]
+     ```
+
+2. **GET /people/:month**:  
+   - Retrieves persons whose birthdays fall in the specified month.
+   - **Request Parameter:**  
+     - `:month` (integer, 1-12)  
+
+3. **POST /person**:  
+   - Adds a new person to the database.
+   - **Request Body:**  
+     ```json
+     {
+       "firstname": "Jane",
+       "lastname": "Smith",
+       "birthday": "1985-10-22"
+     }
+     ```
+
+4. **PUT /person/:id**:  
+   - Updates an existing person's information in the database.
+   - **Request Body:**  
+     ```json
+     {
+       "firstname": "Updated Name",
+       "lastname": "Updated Lastname",
+       "birthday": "2000-01-01"
+     }
+     ```
+
+5. **DELETE /person/:id**:  
+   - Deletes a person from the database by their ID.
+
+---
+
+## Setup Instructions
+
+### Prerequisites
+- **Node.js** (version 14+ recommended)
+- **PostgreSQL** (version 13+ recommended)
+
+### Installation Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/birthday-master-backend.git
+   cd birthday-master-backend
+
+### Install dependencies:
+npm install
+
+### .env File configuration
 
 * DB_USER - user of your postgres database server
 * DB_HOST - your postgres database host
@@ -9,51 +108,21 @@
 * DB_PORT - your postgres database host port
 * WS_PORT - your webserver port
 
-## Descripción
+### Start the server
+npm run webserver
 
-**Birthday Master** el servidor fue creado con **Node.js** y **Express** e interactúa con una base de datos **Postgre**.
+### Future Enhancements
 
----
+* Implement user authentication and authorization for secure access.
+* Optimize query performance with indexing and caching mechanisms.
+* Add real-time notifications for upcoming birthdays.
+* Introduce a GraphQL API for more flexible querying.
 
-## Funcionalidades principales
+### Contact
 
-- **Obtener lista de personas**: Proporciona una lista completa de todas las personas en la base de datos.
-- **Consultar cumpleaños por mes**: Filtra las personas según el mes de nacimiento.
-- **Administración de personas**: Permite agregar, actualizar y eliminar registros de la base de datos.
+For more information or inquiries, feel free to contact:
 
----
+* Email: afranco@mangochango.com
+* GitHub Repository: Birthday Master
 
-## Rutas del backend
-
-### Personas
-- **GET /people**: devuelve todas las personas en la base de datos.
-- **GET /people/:month**: devuelve las personas por mes especifico.
-- **POST /person**: agrega un nuevo registro da la base de datos.
-- **PUT /person/:id**: actualiza los datos de una persona existente.
-- **DELETE /person/:id**: elimina un registro.
-
----
-
-## Tecnologías y herramientas utilizadas
-
-### Lenguajes y frameworks
-- **Node.js**: Entorno de ejecución para el servidor.
-- **Express.js**: Framework para manejar rutas y middlewares.
-
-### Base de datos
-- **Postgre**: Sistema de gestión de bases de datos relacional.
-
-### Librerías y middlewares
-- **pg**: Librería para conectarse y ejecutar consultas en Postgre.
-- **Cors**: Manejo de políticas de acceso entre el cliente y el servidor.
-- **Morgan**: Middleware para el registro de solicitudes HTTP.
-- **Moment.js**: Manipulación y formato de fechas.
-
-Futuras mejoras
-
-    *Agregar autenticación.
-    *Paginacion para el manejo de muchos registros.
-    *Mejorar el manejo de errores en las solicitudes.
-    *Implementacion de Drop-Down para los meses, para mejorar la *experiencia del usuario.
-    *Implementar estilos para estandarizar visualmente las paginas (colores, tamaños de fuentes, alineación, etc.)
 ---

@@ -32,6 +32,7 @@ The backend follows a layered architecture:
 - **Cors:** Manages Cross-Origin Resource Sharing, allowing the frontend to communicate with the backend.
 - **Morgan:** Logs incoming HTTP requests for debugging and monitoring.
 - **Moment.js:** Simplifies date manipulation and formatting.
+- **uuid:** used to generate unique identifiers (UUIDs), providing a simple API for creating secure, standards-compliant UUIDs for various use cases like database entries or resource identifiers.
 
 ---
 

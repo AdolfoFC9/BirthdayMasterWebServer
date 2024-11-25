@@ -94,7 +94,7 @@ The backend follows a layered architecture:
 ### Installation Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/birthday-master-backend.git
+   git clone https://github.com/AdolfoFC9/BirthdayMasterWebServer.git
    cd birthdaymasterwebserver
 
 ### Install dependencies:

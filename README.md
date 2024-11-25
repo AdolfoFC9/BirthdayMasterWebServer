@@ -12,7 +12,7 @@ The backend follows a layered architecture:
 1. **Routes:** Define API endpoints and direct requests to the appropriate controllers.
 2. **Controllers:** Handle the business logic for incoming requests and coordinate interactions between routes and repositories.
 3. **Repositories:** Interact directly with the PostgreSQL database using parameterized queries to ensure security.
-4. **Database:** Stores structured data for persons and supports CRUD operations.
+4. **Database:** Stores structured data for people and supports CRUD operations.
 
 ---
 
@@ -39,7 +39,7 @@ The backend follows a layered architecture:
 
 ### People Endpoints
 1. **GET /people**:  
-   - Retrieves all persons from the database.
+   - Retrieves all people from the database.
    - **Response:**  
      ```json
      [
@@ -53,9 +53,9 @@ The backend follows a layered architecture:
      ```
 
 2. **GET /people/:month**:  
-   - Retrieves persons whose birthdays fall in the specified month.
+   - Retrieves people whose birthdays fall in the specified month.
    - **Request Parameter:**  
-     - `:month` (integer, 1-12)  
+     - `:month` (values from 1-12)  
 
 3. **POST /person**:  
    - Adds a new person to the database.
@@ -101,6 +101,8 @@ npm install
 
 ### .env File configuration
 
+You must create your .env file on the root folder with the following variables
+
 * DB_USER - user of your postgres database server
 * DB_HOST - your postgres database host
 * DB_PSW - your postgres databese pasword
@@ -114,9 +116,6 @@ npm run webserver
 ### Future Enhancements
 
 * Implement user authentication and authorization for secure access.
-* Optimize query performance with indexing and caching mechanisms.
-* Add real-time notifications for upcoming birthdays.
-* Introduce a GraphQL API for more flexible querying.
 
 ### Contact
 
